@@ -53,6 +53,18 @@ export default function Home() {
           ))}
         </tbody>
       </table>
+      <form className="p-4 grid gap-4">
+        <label className="grid gap-4">Username<input className="bg-slate-300 p-4 border-slate-100 border-solid border-2 invalid:border-pink-500" type="text" placeholder="Username" /></label>
+        <label className="grid gap-4">Email<input className="outline-none bg-slate-300 p-4 border-slate-100 border-solid border-2 invalid:border-pink-500 invalid:text-pink-500" type="email" /></label>
+        <label className="grid gap-4">Password<input className="bg-slate-300 p-4 border-slate-100 border-solid border-2 invalid:border-pink-500" type="password" /></label>
+        <button className="bg-blue-500 text-slate-100 p-4">Save changes</button>
+      </form>
+      <form className="bg-blue-300 p-4">
+        <label>
+          Email<input className="outline-none border-2 border-solid invalid:border-pink-400 invalid:text-pink-500" type="email" />
+        </label>
+        <button>Save changes</button>
+      </form>
     </>
   );
 }
