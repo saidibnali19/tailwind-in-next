@@ -14,6 +14,14 @@ export default function Home() {
     { id: 4, town: "Naivasha" },
   ]
 
+  const people = [
+    { id: 0, name: "Sally Kelly", location: "New York" },
+    { id: 1, name: "James Allen", location: "Abu Dhabi" },
+    { id: 2, name: "Zainab Ali", location: "Mecca" },
+    { id: 3, name: "Sam Peter", location: "Nairobi" },
+    { id: 4, name: "Caitlin John", location: "Capetown" },
+  ]
+
   return (
     <>
       <h1 className="font-bold">Hello, world!</h1>
@@ -35,6 +43,16 @@ export default function Home() {
           ))}
         </ul>
       </article>
+      <table>
+        <tbody>
+          {people.map(person => (
+            <tr className="odd:bg-gray-50 even:bg-white" key={person.id}>
+              <td>{person.name}</td>
+              <td>{person.location}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 }
