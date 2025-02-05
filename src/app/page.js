@@ -24,6 +24,21 @@ export default function Home() {
 
   return (
     <>
+      <div className="bg-slate-50 p-4 group hover:bg-slate-500">
+        <h6 className="group-hover:text-slate-50">New project</h6>
+        <p className="group-hover:text-slate-50">Create a new project from our templates</p>
+      </div>
+      <div className="bg-slate-100 p-4 group hover:bg-indigo-400">
+        <h5 className="group-hover:text-slate-50">New project</h5>
+        <p className="group-hover:text-slate-50">Create a new project from our templates</p>
+      </div>
+      <div className="bg-blue-300 size-44 text-slate-50 p-4 group">
+        <h3>James Allen</h3>
+        <button className="hidden group-has-[a]:block">Learn more</button>
+        <p>Product designer at
+          <a href="#"> site.com</a>
+        </p>
+      </div>
       <h1 className="font-bold">Hello, world!</h1>
       <button className="hover:bg-sky-500 focus:outline-sky-500  active:bg-sky-400">Save changes</button>
       <button className="bg-lime-900 text-slate-50 hover:bg-lime-700 focus:outline-lime-700 focus:outline-offset-2 active:bg-lime-600">Learn more</button>
