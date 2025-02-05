@@ -15,15 +15,27 @@ export default function Home() {
   ]
 
   const people = [
-    { id: 0, name: "Sally Kelly", location: "New York" },
-    { id: 1, name: "James Allen", location: "Abu Dhabi" },
-    { id: 2, name: "Zainab Ali", location: "Mecca" },
-    { id: 3, name: "Sam Peter", location: "Nairobi" },
-    { id: 4, name: "Caitlin John", location: "Capetown" },
+    { id: 0, name: "Sally Kelly", location: "New York", email: "sally@example.com" },
+    { id: 1, name: "James Allen", location: "Abu Dhabi", email: "james@example.com" },
+    { id: 2, name: "Zainab Ali", location: "Mecca", email: "zainab@example.com" },
+    { id: 3, name: "Sam Peter", location: "Nairobi", email: "sam@example.com" },
+    { id: 4, name: "Caitlin John", location: "Capetown", email: "caitlin@example.com" },
   ]
 
   return (
     <>
+      <article className="bg-pink-400 p-4">
+        <h5>Contacts</h5>
+        <ul>
+          {people.map(person => (
+            <li className="p-4 bg-pink-500 group/person hover:bg-red-400" key={person.id}>
+              <h6>{person.name}</h6>
+              <p>Location: {person.location}</p>
+              <p className="invisible group-hover/person:visible group/email"><span className="group-hover/email:text-slate-50">Email:</span> <span className="group-hover/email:text-slate-50">{person.email}</span></p>
+            </li>
+          ))}
+        </ul>
+      </article>
       <div className="bg-slate-50 p-4 group hover:bg-slate-500">
         <h6 className="group-hover:text-slate-50">New project</h6>
         <p className="group-hover:text-slate-50">Create a new project from our templates</p>
