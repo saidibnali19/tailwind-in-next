@@ -24,6 +24,22 @@ export default function Home() {
 
   return (
     <>
+      <form>
+        <label>Email:
+          <input className="border-solid border-2 border-slate-100 peer" type="email" />
+          <p className="invisible peer-invalid:visible">Please input a valid email</p>
+        </label>
+        <button>Submit </button>
+      </form>
+      <form>
+        <label>Email<input className="border-solid border-slate-300 border-2 peer" type="email" />
+          <p className="invisible peer-invalid:visible">Please input a valid email</p>
+        </label>
+        <button>Submit</button>
+      </form>
+      <div tabIndex="0">
+        <div className="bg-amber-500 h-64 opacity-50 in-focus:opacity-100" tabIndex="0"></div>
+      </div>
       <article className="bg-pink-400 p-4">
         <h5>Contacts</h5>
         <ul>
