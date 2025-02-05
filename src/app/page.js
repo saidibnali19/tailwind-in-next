@@ -24,6 +24,24 @@ export default function Home() {
 
   return (
     <>
+      <fieldset>
+        <legend>Published status</legend>
+        <input className="peer/draft" id="draft" type="radio" name="status" />
+        <label htmlFor="draft">Draft</label>
+        <input className="peer/published" id="published" type="radio" name="status" />
+        <label htmlFor="published">Published</label>
+        <p className="hidden peer-checked/draft:block">Drafts are only visible to admins</p>
+        <p className="hidden peer-checked/published:block">Published posts are visible to the public</p>
+      </fieldset>
+      <fieldset>
+        <legend>Published status</legend>
+        <input className="peer/draft" id="draft" type="radio" name="status" />
+        <label htmlFor="draft">Draft</label>
+        <input className="peer/published" type="radio" name="status" id="published" />
+        <label htmlFor="published">Published</label>
+        <p className="hidden peer-checked/draft:block">Drafts are only visible to admins</p>
+        <p className="hidden peer-checked/published:block">Published posts are available for the public</p>
+      </fieldset>
       <form>
         <label>Email:
           <input className="border-solid border-2 border-slate-100 peer" type="email" />
