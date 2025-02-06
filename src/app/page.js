@@ -1,4 +1,9 @@
+"use client"
+
+import { useRef } from "react"
+
 export default function Home() {
+
   const careers = [
     { id: 0, career: "Full stack developer" },
     { id: 1, career: "Front end developer" },
@@ -22,8 +27,33 @@ export default function Home() {
     { id: 4, name: "Caitlin John", location: "Capetown", email: "caitlin@example.com" },
   ]
 
+  const dialogRef = useRef(null)
+
   return (
     <>
+      <div>
+        <button onClick={() => dialogRef.current.showModal()}>Show dialog</button>
+        <dialog className="backdrop:bg-gray-50" ref={dialogRef}>
+          <h1>Dialog box</h1>
+          <p>Dialog box content</p>
+          <button onClick={() => dialogRef.current.close()}>close</button>
+        </dialog>
+      </div>
+      <p className="text-gray-700 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 first-line:tracking-widest first-line:uppercase p-4 selection:text-fuchsia-900 selection:bg-fuchsia-300">
+        So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I made my way past the breakers a strange calm came over me. I don't know if it was divine intervention or the kinship of all living things but I tell you Jerry at that moment, I was a marine biologist.
+      </p>
+      <article className="p-4">
+        <h2>A list of careers</h2>
+        <ul className="px-4 list-decimal marker:text-pink-400" role="list">
+          {careers.map(career => (
+            <li key={career.id} className="first:text-amber-500 last:text-amber-500">{career.career}</li>
+          ))}
+        </ul>
+      </article>
+      <form>
+        <input placeholder="search" className="border-solid border-2 border-slate-100 placeholder:text-slate-400 placeholder:italic placeholder:font-serif" type="search" />
+        <input className="file:bg-pink-400 file:text-slate-50 file:rounded-full file:px-4 file:border-0 hover:file:bg-pink-500" type="file" />
+      </form>
       <form>
         <label>
           <span className="flex gap-4 before:content-['*'] before:text-pink-400 before:order-2">Email</span>
@@ -112,14 +142,6 @@ export default function Home() {
       <h1 className="font-bold">Hello, world!</h1>
       <button className="hover:bg-sky-500 focus:outline-sky-500  active:bg-sky-400">Save changes</button>
       <button className="bg-lime-900 text-slate-50 hover:bg-lime-700 focus:outline-lime-700 focus:outline-offset-2 active:bg-lime-600">Learn more</button>
-      <article>
-        <h2>A list of careers</h2>
-        <ul >
-          {careers.map(career => (
-            <li key={career.id} className="first:text-amber-500 last:text-amber-500">{career.career}</li>
-          ))}
-        </ul>
-      </article>
       <article>
         <h3>A list of towns</h3>
         <ul>
