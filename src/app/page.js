@@ -24,6 +24,30 @@ export default function Home() {
 
   return (
     <>
+      <form>
+        <label>
+          <span className="flex gap-4 before:content-['*'] before:text-pink-400 before:order-2">Email</span>
+          <input className="border-solid border-2 border-slate-100" type="email" />
+          <button>Submit</button>
+        </label>
+      </form>
+      <form>
+        <label>
+          <span className="flex gap-4 before:text-pink-500 before:size-4 before:block before:content-['*'] before:order-2" >Email</span>
+          <input className="border-solid border-2 border-slate-100" type="email" />
+        </label>
+        <button>Submit</button>
+      </form>
+      <form>
+        <input className="peer is-dirty" type="email" placeholder="Email" required />
+        <p className="hidden peer-[.is-dirty]:peer-required:block">This field is required</p>
+      </form>
+      <form>
+        <label>Email</label>
+        <input className="border-solid border-2 border-slate-100 peer dirty" type="email" required />
+        <p className="hidden peer-[.dirty]:peer-required:block">This field is required</p>
+        <button>Submit</button>
+      </form>
       <fieldset>
         <legend>Published status</legend>
         <input className="peer/draft" id="draft" type="radio" name="status" />
