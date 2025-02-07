@@ -31,6 +31,33 @@ export default function Home() {
 
   return (
     <>
+      <div className="m-4 p-4 border-2 border-pink-400 border-solid w-60 bg-gray-900 text-white rounded-lg">
+        <p className="print:hidden">This is a secret</p>
+        <p>Are you trying to print this? It's a secret.</p>
+      </div>
+      <div className="m-4 p-4 w-40 bg-gray-900 text-white rounded-lg">
+        <p className="landscape:hidden">Portrait content</p>
+        <p className="hidden landscape:block">Landscape content</p>
+      </div>
+      <form className="m-4 p-4 border-2 border-solid border-pink-400 rounded-md">
+        <label>
+          <input className="appearance-none forced-colors:appearance-auto" type="radio" />
+          <span className="hidden forced-colors:block">Cyan</span>
+          <div className="size-4 bg-cyan-400"></div>
+        </label>
+      </form>
+      <article className="grid gap-4 w-40 p-4 border-solid border-2 border-pink-400 rounded-md m-4 text-gray-900 dark:bg-gray-900 dark:text-white">
+        <h2 className="text-2xl">Zero gravity pen</h2>
+        <p>The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.</p>
+        <p className="motion-reduce:hidden">Animation</p>
+        <p className="motion-safe:transition motion-safe:hover:-translate-x-4 motion-reduce:hover:bg-pink-300 justify-self-start">save</p>
+        <p className="opacity-10 contrast-more:opacity-100">More content here</p>
+      </article>
+      <div className="grid gap-4 grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
+          <div key={num} className="bg-pink-400 h-40"></div>
+        ))}
+      </div>
       <div>
         <button onClick={() => dialogRef.current.showModal()}>Show dialog</button>
         <dialog className="backdrop:bg-gray-50" ref={dialogRef}>
