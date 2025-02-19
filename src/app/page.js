@@ -31,6 +31,90 @@ export default function Home() {
 
   return (
     <>
+      <article className="m-4 p-4">
+        <h2 className="mb-4">Towns</h2>
+        <ul className="flex gap-4 *:bg-sky-50 *:px-2 *:rounded-full *:border *:border-sky-100">
+          {
+            towns.map(town => (
+              <li className="[&.changed]:text-2xl" key={town.id}>{town.town}</li>
+            ))
+          }
+        </ul>
+      </article>
+      <form className="m-4 p-4 border-2 border-solid border-pink-400 rounded-md">
+        <fieldset inert>
+          <div className="flex gap-4">
+            <input type="checkbox" id="comment" defaultChecked />
+            <label htmlFor="comment">Comments</label>
+          </div>
+        </fieldset>
+        <label>
+          <input className="appearance-none forced-colors:appearance-auto" type="radio" />
+          <span className="hidden forced-colors:block">Cyan</span>
+          <div className="size-4 bg-cyan-400"></div>
+        </label>
+      </form>
+      <details className="p-4 border-2 border-solid border-gray-900 open:border-sky-500">
+        <summary>What is information?</summary>
+        <p>information is processed data.</p>
+      </details>
+      <div>
+        <button onClick={() => dialogRef.current.showModal()}>Show dialog</button>
+        <dialog className="backdrop:bg-gray-50 text-white bg-gray-900 p-4 rounded-lg" ref={dialogRef}>
+          <h1>Dialog box</h1>
+          <p>Dialog box content</p>
+          <button onClick={() => dialogRef.current.close()}>close</button>
+        </dialog>
+      </div>
+      <div className="grid gap-4">
+        {people.map(person => (
+          <div className="flex gap-4 p-4 bg-gray-900 text-white" key={person.id}>
+            <div className="size-12 bg-sky-500 rounded-full"></div>
+            <div>
+              <h2>{person.name}</h2>
+              <p>{person.location}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="m-4 p-4 bg-gray-900 data-[height=small]:h-40" data-height="small"></div>
+      <div className="m-4 p-4 bg-gray-900 data-[height=large]:h-60" data-height="large"></div>
+      <div className="m-4 p-4 bg-gray-900 h-40 data-[active]:bg-sky-500" data-active></div>
+      <div className="m-4 p-4 bg-gray-900 h-40 data-[active]:bg-sky-500"></div>
+      <table className="m-4">
+        <thead>
+          <tr>
+            <th className="group" aria-sort="descending">
+              Name
+              <span className="group-aria-[sort=descending]:invisible"> Ascending</span>
+              <span className="invisible group-aria-[sort=descending]:visible"> Descending</span>
+            </th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          {people.map(person => (
+            <tr className="odd:bg-gray-50 even:bg-white" key={person.id}>
+              <td>
+                {person.name}
+              </td>
+              <td>{person.location}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <article className="p-4">
+        <h2>A list of careers</h2>
+        <ul className="px-4 list-decimal marker:text-pink-400" role="list">
+          {careers.map(career => (
+            <li key={career.id} className="first:text-amber-500 last:text-amber-500">{career.career}</li>
+          ))}
+        </ul>
+      </article>
+      <button className="bg-gray-900 text-white p-4 rounded-lg m-4 aria-disabled:bg-gray-500" aria-disabled>Disabled</button>
+      <div className="m-4 p-4 border-2 border-pink-400 border-solid w-60 bg-gray-900 text-white rounded-lg h-40 aria-expanded:bg-sky-700" aria-expanded="true"></div>
+      <div className="m-4 p-4 border-2 border-pink-400 border-solid w-60 bg-gray-900 text-white rounded-lg aria-selected:bg-sky-700" aria-selected="true">
+      </div>
       <div className="m-4 p-4 border-2 border-pink-400 border-solid w-60 bg-gray-900 text-white rounded-lg">
         <p className="print:hidden">This is a secret</p>
         <p>Are you trying to print this? It's a secret.</p>
@@ -39,13 +123,6 @@ export default function Home() {
         <p className="landscape:hidden">Portrait content</p>
         <p className="hidden landscape:block">Landscape content</p>
       </div>
-      <form className="m-4 p-4 border-2 border-solid border-pink-400 rounded-md">
-        <label>
-          <input className="appearance-none forced-colors:appearance-auto" type="radio" />
-          <span className="hidden forced-colors:block">Cyan</span>
-          <div className="size-4 bg-cyan-400"></div>
-        </label>
-      </form>
       <article className="grid gap-4 w-40 p-4 border-solid border-2 border-pink-400 rounded-md m-4 text-gray-900 dark:bg-gray-900 dark:text-white">
         <h2 className="text-2xl">Zero gravity pen</h2>
         <p>The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.</p>
@@ -58,25 +135,9 @@ export default function Home() {
           <div key={num} className="bg-pink-400 h-40"></div>
         ))}
       </div>
-      <div>
-        <button onClick={() => dialogRef.current.showModal()}>Show dialog</button>
-        <dialog className="backdrop:bg-gray-50" ref={dialogRef}>
-          <h1>Dialog box</h1>
-          <p>Dialog box content</p>
-          <button onClick={() => dialogRef.current.close()}>close</button>
-        </dialog>
-      </div>
       <p className="text-gray-700 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 first-line:tracking-widest first-line:uppercase p-4 selection:text-fuchsia-900 selection:bg-fuchsia-300">
         So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I made my way past the breakers a strange calm came over me. I don't know if it was divine intervention or the kinship of all living things but I tell you Jerry at that moment, I was a marine biologist.
       </p>
-      <article className="p-4">
-        <h2>A list of careers</h2>
-        <ul className="px-4 list-decimal marker:text-pink-400" role="list">
-          {careers.map(career => (
-            <li key={career.id} className="first:text-amber-500 last:text-amber-500">{career.career}</li>
-          ))}
-        </ul>
-      </article>
       <form>
         <input placeholder="search" className="border-solid border-2 border-slate-100 placeholder:text-slate-400 placeholder:italic placeholder:font-serif" type="search" />
         <input className="file:bg-pink-400 file:text-slate-50 file:rounded-full file:px-4 file:border-0 hover:file:bg-pink-500" type="file" />
@@ -177,16 +238,6 @@ export default function Home() {
           ))}
         </ul>
       </article>
-      <table>
-        <tbody>
-          {people.map(person => (
-            <tr className="odd:bg-gray-50 even:bg-white" key={person.id}>
-              <td>{person.name}</td>
-              <td>{person.location}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
       <form className="p-4 grid gap-4">
         <label className="grid gap-4">Username<input className="bg-slate-300 p-4 border-slate-100 border-solid border-2 invalid:border-pink-500" type="text" placeholder="Username" /></label>
         <label className="grid gap-4">Email<input className="outline-none bg-slate-300 p-4 border-slate-100 border-solid border-2 invalid:border-pink-500 invalid:text-pink-500" type="email" /></label>
