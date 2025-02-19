@@ -31,6 +31,22 @@ export default function Home() {
 
   return (
     <>
+      <div className="border-2 border-solid border-sky-100 p-4 m-4 grid gap-4 min-[500px]:grid-cols-2">
+        {[0, 1, 2, 3, 4, 5].map(item => (
+          <div className="bg-sky-400 size-10" key={item}></div>
+        ))}
+      </div>
+      <div className="border-2 border-solid border-sky-100 p-4 m-4 grid gap-4 md:max-lg:grid-cols-2">
+        {[0, 1, 2, 3, 4, 5].map(item => (
+          <div className="bg-sky-400 size-10" key={item}></div>
+        ))}
+      </div>
+      <div className="border-2 border-solid border-sky-100 p-4 m-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {[0, 1, 2, 3, 4, 5].map(item => (
+          <div className="bg-sky-400 size-10" key={item}></div>
+        ))}
+      </div>
+      <div className="bg-sky-400 h-40 w-4 md:w-16 lg:w-32"></div>
       <article className="m-4 p-4">
         <h2 className="mb-4">Towns</h2>
         <ul className="flex gap-4 *:bg-sky-50 *:px-2 *:rounded-full *:border *:border-sky-100">
